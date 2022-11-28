@@ -16,16 +16,16 @@ set -e
 # Optional: Import test library bundled with the devcontainer CLI
 source dev-container-features-test-lib
 
-echo -e "The result of the 'color' command will be:\n"
-color
-echo -e "The result of the 'hello' command will be:\n"
-hello
+echo -e "The result of the 'kusion' command will be:\n"
+kusion
+echo -e "The result of the 'kcl' command will be:\n"
+kcl
 echo -e "\n"
 
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib.
-check "check purple is my favorite color" color | grep 'my favorite color is purple'
-check "check I am greeting with 'Greetings'" hello | grep 'Greetings, root'
+check "check kusion version produces version info" kusion version | grep 'releaseVersion: v0.7.1'
+check "check kcl -V produces version info" kcl -V | grep 'kclvm version is 0.4.3'
 
 
 # Report result

@@ -1,12 +1,9 @@
 {
-    "color_and_hello": {
+    "kusion": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
-            "color": {
-                "favorite": "purple"
-            },
-            "hello": {
-                "greeting": "Greetings"
+            "kusion": {
+                "version": "v0.7.1"
             }
         }
     }
