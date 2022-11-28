@@ -24,7 +24,6 @@ set -e
 
 # Optional: Import test library bundled with the devcontainer CLI
 source dev-container-features-test-lib
-export PATH=$PATH:~/.kusion/bin:~/.kusion/kclvm/bin
 
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib.
