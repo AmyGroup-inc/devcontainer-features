@@ -12,6 +12,3 @@ mkdir -p ${KUSION_LOCATION}
 
 # install Kusion pack
 wget -c  ${KUSION_URL} -qO - | tar xz -C ${KUSION_LOCATION}
-
-# add ${KUSION_LOCATION} to ${PATH}
-export PATH=$PATH:${KUSION_LOCATION}/bin:${KUSION_LOCATION}/kclvm/bin
