@@ -15,6 +15,10 @@ set -e
 
 # Optional: Import test library bundled with the devcontainer CLI
 source dev-container-features-test-lib
+echo $PATH
+which kusion
+echo "===amyhere==="
+export PATH=$PATH:~/.kusion/bin:~/.kusion/kclvm/bin
 
 echo -e "The result of the 'kusion' command will be:\n"
 kusion
