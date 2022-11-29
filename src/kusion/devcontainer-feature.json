@@ -1,7 +1,7 @@
 {
     "name": "Kusion",
     "id": "kusion",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Installs kusion tools pack and the vscode kusion and KCL extension. This feature cannot be used on Ubuntu20.10+ for now.",
     "options": {
         "version": {

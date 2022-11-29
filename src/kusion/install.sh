@@ -26,12 +26,14 @@ check_packages wget ca-certificates
 
 echo "Activating feature 'Kusion'"
 mkdir -p ${KUSION_LOCATION}
-# ensure that the kusion install path has correct privs
-chown -R $USERNAME ${KUSION_LOCATION}
-chmod -R u+wrx ${KUSION_LOCATION}
+
 # install Kusion pack
 wget -c  ${KUSION_URL} -qO - | tar xz -C ${KUSION_LOCATION}
 # the kusion bin location is added to path by devcontainer-feature.json file
+
+# ensure that the kusion install path has correct privs
+chown -R $USERNAME ${KUSION_LOCATION}
+chmod -R u+wrx ${KUSION_LOCATION}
 
 # check the user permission
 ls -al ${KUSION_LOCATION}/bin
