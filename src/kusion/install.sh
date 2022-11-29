@@ -7,6 +7,9 @@ VERSION=${VERSION:-"v0.7.1"}
 KUSION_URL="https://github.com/KusionStack/kusion/releases/download/${VERSION}/kusion-ubuntu.tgz"
 KUSION_LOCATION="/home/vscode/.kusion"
 
+USERNAME="${USERNAME:-"${_REMOTE_USER:-"automatic"}"}"
+
+
 # Checks if packages are installed and installs them if not
 check_packages() {
     if ! dpkg -s "$@" > /dev/null 2>&1; then
@@ -26,3 +29,6 @@ mkdir -p ${KUSION_LOCATION}
 # install Kusion pack
 wget -c  ${KUSION_URL} -qO - | tar xz -C ${KUSION_LOCATION}
 # the kusion bin location is added to path by devcontainer-feature.json file
+
+# ensure that the kusion install path has correct privs
+chown -R $USERNAME ${KUSION_LOCATION}
