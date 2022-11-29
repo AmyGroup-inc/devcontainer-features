@@ -8,6 +8,22 @@ KUSION_URL="https://github.com/KusionStack/kusion/releases/download/${VERSION}/k
 KUSION_LOCATION="/home/vscode/.kusion"
 
 USERNAME="${USERNAME:-"${_REMOTE_USER:-"automatic"}"}"
+# Determine the appropriate non-root user
+if [ "${USERNAME}" = "auto" ] || [ "${USERNAME}" = "automatic" ]; then
+    USERNAME=""
+    POSSIBLE_USERS=("vscode" "node" "codespace" "$(awk -v val=1000 -F ":" '$3==val{print $1}' /etc/passwd)")
+    for CURRENT_USER in "${POSSIBLE_USERS[@]}"; do
+        if id -u ${CURRENT_USER} > /dev/null 2>&1; then
+            USERNAME=${CURRENT_USER}
+            break
+        fi
+    done
+    if [ "${USERNAME}" = "" ]; then
+        USERNAME=root
+    fi
+elif [ "${USERNAME}" = "none" ] || ! id -u ${USERNAME} > /dev/null 2>&1; then
+    USERNAME=root
+fi
 
 
 # Checks if packages are installed and installs them if not
@@ -32,3 +48,7 @@ wget -c  ${KUSION_URL} -qO - | tar xz -C ${KUSION_LOCATION}
 
 # ensure that the kusion install path has correct privs
 chown -R $USERNAME ${KUSION_LOCATION}
+chmod -R u+wrx ${KUSION_LOCATION}
+
+# check the user permission
+ls -al ${KUSION_LOCATION}/bin
