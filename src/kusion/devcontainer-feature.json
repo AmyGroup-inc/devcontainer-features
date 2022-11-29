@@ -1,7 +1,7 @@
 {
     "name": "Kusion",
     "id": "kusion",
-    "version": "1.0.3",
+    "version": "0.0.1",
     "description": "Installs kusion tools pack and the vscode kusion and KCL extension",
     "options": {
         "version": {

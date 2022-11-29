@@ -11,18 +11,10 @@
 # This test can be run with the following command (from the root of this repo)
 #    devcontainer features test --global-scenarios-only .
 
-set +e
+set -e
 
 # Optional: Import test library bundled with the devcontainer CLI
 source dev-container-features-test-lib
-echo "===amyhere===echo path"
-echo $PATH
-echo "===amyhere===ls kusion"
-ls /home/vscode/.kusion/bin
-echo "==amyhere=== kusion Version"
-/home/vscode/.kusion/bin/kusion version
-echo "===amyhere==="
-which kusion
 
 echo -e "The result of the 'kusion' command will be:\n"
 kusion
