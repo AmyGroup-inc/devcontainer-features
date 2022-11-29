@@ -1,7 +1,7 @@
 
 # Kusion (kusion)
 
-Installs kusion tools pack and the vscode kusion and KCL extension
+Installs kusion tools pack and the vscode kusion and KCL extension. This feature cannot be used on Ubuntu20.10+ for now.
 
 ## Example Usage
 
