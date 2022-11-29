@@ -9,8 +9,7 @@ KUSION_LOCATION="/home/vscode/.kusion"
 
 USERNAME="${USERNAME:-"${_REMOTE_USER:-"automatic"}"}"
 
-echo "test"
-
+echo "check dependency packages..."
 # Checks if packages are installed and installs them if not
 check_packages() {
     if ! dpkg -s "$@" > /dev/null 2>&1; then
