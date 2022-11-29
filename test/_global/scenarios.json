@@ -1,6 +1,6 @@
 {
     "kusion": {
-        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "image": "mcr.microsoft.com/devcontainers/base:bullseye",
         "features": {
             "kusion": {
                 "version": "v0.7.1"

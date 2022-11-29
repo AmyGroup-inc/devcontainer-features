@@ -19,7 +19,7 @@ check_packages() {
 }
 
 # Install dependencies
-check_packages wget
+check_packages wget ca-certificates
 
 echo "Activating feature 'Kusion'"
 mkdir -p ${KUSION_LOCATION}
